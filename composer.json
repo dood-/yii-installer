@@ -1,0 +1,63 @@
+{
+    "name": "yiisoft/app",
+    "type": "project",
+    "description": "Yii 3 application template",
+    "keywords": [
+        "yii3",
+        "app"
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "installyii": "Yiisoft\\Yii\\Installer\\Installer::install",
+        "pre-update-cmd": "Yiisoft\\Yii\\Installer\\Installer::install",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "./yii serve"
+        ],
+        "test": "codecept run",
+        "test-watch": "phpunit-watcher watch"
+    },
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "codeception/c3": "^2.7",
+        "codeception/codeception": "^5.0",
+        "codeception/module-asserts": "^3.0",
+        "codeception/module-cli": "^2.0",
+        "codeception/module-phpbrowser": "^3.0",
+        "phpunit/phpunit": "^9.5",
+        "rector/rector": "^0.18.0",
+        "roave/infection-static-analysis-plugin": "^1.25",
+        "roave/security-advisories": "dev-master",
+        "spatie/phpunit-watcher": "^1.23",
+        "vimeo/psalm": "^4.30|^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src",
+            "Yiisoft\\Yii\\Installer\\": "installer/src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        },
+        "config-plugin-file": "configuration.php"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "yiisoft/config": true,
+            "infection/extension-installer": true,
+            "codeception/c3": true,
+            "composer/installers": true
+        }
+    }
+}

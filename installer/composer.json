@@ -1,0 +1,38 @@
+{
+    "name": "yiisoft/app-installer",
+    "type": "project",
+    "description": "Yii 3 application installer",
+    "require-dev": {
+        "composer/composer": "^2.4",
+        "codeception/c3": "^2.7",
+        "codeception/codeception": "^5.0",
+        "codeception/module-asserts": "^3.0",
+        "codeception/module-cli": "^2.0",
+        "codeception/module-phpbrowser": "^3.0",
+        "phpunit/phpunit": "^9.5",
+        "rector/rector": "^0.18.0",
+        "roave/infection-static-analysis-plugin": "^1.25",
+        "roave/security-advisories": "dev-master",
+        "spatie/phpunit-watcher": "^1.23",
+        "vimeo/psalm": "^4.30|^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yiisoft\\Yii\\Installer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yiisoft\\Yii\\Installer\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "yiisoft/config": true,
+            "infection/extension-installer": true,
+            "codeception/c3": true,
+            "composer/installers": true
+        }
+    }
+}
