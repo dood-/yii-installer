@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Yiisoft\Yii\Installer\Questions\Fields;
 
+use BackedEnum;
 use RuntimeException;
 use UnitEnum;
 
@@ -12,7 +13,7 @@ class SelectField extends Field implements OptionsProvider
     /**
      * @param string|non-empty-string $name
      * @param string|non-empty-string $question
-     * @param SelectOption[]|class-string $options
+     * @param SelectOption[]|class-string<UnitEnum> $options
      * @param string|null $help
      * @param bool $required
      * @param string|bool|null $default
@@ -43,7 +44,7 @@ class SelectField extends Field implements OptionsProvider
 
         if (is_string($options)) {
             if (!enum_exists($options)) {
-                throw new RuntimeException("Enum '{$options}' does not exists");
+                throw new RuntimeException("Enum '$options' does not exists");
             }
 
             $options = array_map(static fn(UnitEnum $case) => new SelectOption(

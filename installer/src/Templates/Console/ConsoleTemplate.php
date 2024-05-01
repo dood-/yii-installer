@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Yiisoft\Yii\Installer\Templates\Console;
 
 use Yiisoft\Yii\Installer\Steps\Database\DatabaseQuestion;
-use Yiisoft\Yii\Installer\Template;
 use Yiisoft\Yii\Installer\Templates\Console\Handlers\InstallPackagesHandler;
+use Yiisoft\Yii\Installer\Templates\Template;
 
 final class ConsoleTemplate extends Template
 {

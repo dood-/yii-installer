@@ -15,7 +15,7 @@ use function strtolower;
 final class ConsoleIO
 {
     public function __construct(
-        private IOInterface $io,
+        private readonly IOInterface $io,
     ) {
     }
 
@@ -28,10 +28,6 @@ final class ConsoleIO
         return $this->askText($field);
     }
 
-    /**
-     * @param Feild|OptionsProvider $field
-     * @return mixed
-     */
     public function askOption(Field|OptionsProvider $field): mixed
     {
         $options = $field->getOptions();

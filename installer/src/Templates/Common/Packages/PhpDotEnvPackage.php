@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Yiisoft\Yii\Installer\Templates\Common\Packages;
 
-use Yiisoft\Yii\Installer\ComposerPackage;
+use Yiisoft\Yii\Installer\Managers\Composer\ComposerPackage;
 use Yiisoft\Yii\Installer\Managers\Composer\Package;
 
 final class PhpDotEnvPackage extends Package

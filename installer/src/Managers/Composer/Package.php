@@ -11,11 +11,6 @@ abstract class Package
     public readonly string $name;
     public readonly string $version;
 
-    /**
-     * @param string $package
-     * @param bool $isDev
-     * @param Package[] $dependencies
-     */
     public function __construct(
         public readonly ComposerPackage $package,
         public readonly bool $isDev = false,

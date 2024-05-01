@@ -9,7 +9,6 @@ use Yiisoft\Yii\Installer\Internal\InstallerContext;
 use Yiisoft\Yii\Installer\Steps\Database\DatabaseQuestion;
 use Yiisoft\Yii\Installer\Steps\Database\DatabaseQuestionsResult;
 use Yiisoft\Yii\Installer\Steps\Database\DatabaseType;
-use Yiisoft\Yii\Installer\Steps\Database\Packages\CycleDatabasePackage;
 use Yiisoft\Yii\Installer\Steps\Database\Packages\CyclePackage;
 use Yiisoft\Yii\Installer\Steps\InstallationHandler;
 

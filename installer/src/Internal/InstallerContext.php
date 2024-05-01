@@ -8,7 +8,7 @@ use Yiisoft\Yii\Installer\Managers\Composer\ComposerManager;
 use Yiisoft\Yii\Installer\Managers\Env\EnvManager;
 use Yiisoft\Yii\Installer\Questions\Question;
 use Yiisoft\Yii\Installer\Questions\QuestionsResult;
-use Yiisoft\Yii\Installer\Template;
+use Yiisoft\Yii\Installer\Templates\Template;
 
 final class InstallerContext
 {

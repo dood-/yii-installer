@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Installer;
+namespace Yiisoft\Yii\Installer\Templates;
 
 use Yiisoft\Yii\Installer\Questions\Question;
 use Yiisoft\Yii\Installer\Steps\InstallationHandler;

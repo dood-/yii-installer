@@ -19,21 +19,15 @@
         "test-watch": "phpunit-watcher watch"
     },
     "require": {
-        "php": "^8.1"
+        "php": "^8.1",
+        "composer/composer": "^2.4",
+        "yiisoft/yii-runner-console": "^2.0",
+        "yiisoft/yii-console": "^2.0",
+        "yiisoft/yii-cycle": "dev-master",
+        "cycle/entity-behavior": "^1.0",
+        "cycle/orm": "^2.0"
     },
-    "require-dev": {
-        "codeception/c3": "^2.7",
-        "codeception/codeception": "^5.0",
-        "codeception/module-asserts": "^3.0",
-        "codeception/module-cli": "^2.0",
-        "codeception/module-phpbrowser": "^3.0",
-        "phpunit/phpunit": "^9.5",
-        "rector/rector": "^0.18.0",
-        "roave/infection-static-analysis-plugin": "^1.25",
-        "roave/security-advisories": "dev-master",
-        "spatie/phpunit-watcher": "^1.23",
-        "vimeo/psalm": "^4.30|^5.4"
-    },
+    "require-dev": [],
     "autoload": {
         "psr-4": {
             "App\\": "src",

@@ -14,9 +14,6 @@ final class QuestionFieldsHandler
     ) {
     }
 
-    /**
-     * @return array<string, mixed>
-     */
     public function handle(Question $question): ?QuestionsResult
     {
         $generator = $question->fields();

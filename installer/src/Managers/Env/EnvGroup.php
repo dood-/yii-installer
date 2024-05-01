@@ -57,7 +57,7 @@ final class EnvGroup implements Stringable, IteratorAggregate
         $rows = [];
 
         if ($this->comment !== null) {
-            $rows[] = "#{$this->comment}";
+            $rows[] = "#$this->comment";
         }
 
         foreach ($this->values as $key => $value) {

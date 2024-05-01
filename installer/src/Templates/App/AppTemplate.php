@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace Yiisoft\Yii\Installer\Templates\App;
 
-use Yiisoft\Yii\Installer\Steps\Database\DatabaseStep;
-use Yiisoft\Yii\Installer\Template;
+use Yiisoft\Yii\Installer\Templates\Template;
 
 final class AppTemplate extends Template
 {
@@ -16,6 +15,9 @@ final class AppTemplate extends Template
         parent::__construct(
             template: $template,
             description: $description,
+            handlers: [],
+            resources: [],
+            questions: [],
         );
     }
 }

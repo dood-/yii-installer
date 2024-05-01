@@ -14,6 +14,7 @@ use Yiisoft\Yii\Installer\Managers\Composer\ComposerManager;
 use Yiisoft\Yii\Installer\Managers\Env\EnvManager;
 use Yiisoft\Yii\Installer\Questions\Fields\SelectField;
 use Yiisoft\Yii\Installer\Questions\QuestionFieldsHandler;
+use Yiisoft\Yii\Installer\Templates\Template;
 use Yiisoft\Yii\Installer\Templates\TemplateType;
 
 use function dirname;
@@ -23,16 +24,16 @@ use function str_replace;
 
 final class Installer
 {
-    private string $projectRoot;
+    private readonly string $projectRoot;
 
     public function __construct(
-        private ConsoleIO $io,
-        private string $composerFilePath,
-        private Composer $composer,
+        private readonly ConsoleIO $io,
+        private readonly string $composerFilePath,
+        private readonly Composer $composer,
         ?string $projectRoot = null,
     ) {
-        $this->projectRoot = $projectRoot ?? str_replace('\\', '/', realpath(dirname($this->composerFilePath)));
-        $this->projectRoot = rtrim($this->projectRoot, '/\\') . '/';
+        $projectRoot = $projectRoot ?? str_replace('\\', '/', realpath(dirname($this->composerFilePath)));
+        $this->projectRoot = rtrim($projectRoot, '/\\') . '/';
     }
 
     public static function install(Event $event): void
