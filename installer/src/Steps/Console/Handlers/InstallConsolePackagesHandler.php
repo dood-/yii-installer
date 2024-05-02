@@ -12,7 +12,7 @@ use Yiisoft\Yii\Installer\Steps\InstallationHandler;
 
 final class InstallConsolePackagesHandler extends InstallationHandler
 {
-    public function handle(InstallerContext $context): void
+    public function install(InstallerContext $context): void
     {
         $result = $context->questionResults[ConsoleQuestionResult::class];
 

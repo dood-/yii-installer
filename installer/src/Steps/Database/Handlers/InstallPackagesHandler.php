@@ -6,6 +6,7 @@ namespace Yiisoft\Yii\Installer\Steps\Database\Handlers;
 
 use InvalidArgumentException;
 use Yiisoft\Yii\Installer\Internal\InstallerContext;
+use Yiisoft\Yii\Installer\Managers\Resource\Resource;
 use Yiisoft\Yii\Installer\Steps\Database\DatabaseQuestion;
 use Yiisoft\Yii\Installer\Steps\Database\DatabaseQuestionsResult;
 use Yiisoft\Yii\Installer\Steps\Database\DatabaseType;
@@ -14,7 +15,7 @@ use Yiisoft\Yii\Installer\Steps\InstallationHandler;
 
 final class InstallPackagesHandler extends InstallationHandler
 {
-    public function handle(InstallerContext $context): void
+    public function install(InstallerContext $context): void
     {
         $result = $context->questionResults[DatabaseQuestion::class];
 

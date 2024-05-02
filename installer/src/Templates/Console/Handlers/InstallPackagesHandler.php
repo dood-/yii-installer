@@ -10,7 +10,7 @@ use Yiisoft\Yii\Installer\Steps\InstallationHandler;
 
 final class InstallPackagesHandler extends InstallationHandler
 {
-    public function handle(InstallerContext $context): void
+    public function install(InstallerContext $context): void
     {
         $context->composerManager->addPackage(new RunnerConsolePackage());
     }

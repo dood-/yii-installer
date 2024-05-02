@@ -28,6 +28,14 @@ final class ComposerJsonStorage
      */
     public function write(array $config): void
     {
+        if (empty($config['require'])) {
+            $config['require'] = new \stdClass();
+        }
+
+        if (empty($config['require-dev'])) {
+            $config['require-dev'] = new \stdClass();
+        }
+
         $this->file->write($config);
     }
 }

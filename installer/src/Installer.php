@@ -7,13 +7,16 @@ namespace Yiisoft\Yii\Installer;
 use Composer\Composer;
 use Composer\Json\JsonFile;
 use Composer\Script\Event;
+use ReflectionClass;
 use Yiisoft\Yii\Installer\Console\ConsoleIO;
 use Yiisoft\Yii\Installer\Internal\InstallerContext;
 use Yiisoft\Yii\Installer\Managers\Composer\ComposerJsonStorage;
 use Yiisoft\Yii\Installer\Managers\Composer\ComposerManager;
 use Yiisoft\Yii\Installer\Managers\Env\EnvManager;
+use Yiisoft\Yii\Installer\Managers\Resource\ResourceManager;
 use Yiisoft\Yii\Installer\Questions\Fields\SelectField;
 use Yiisoft\Yii\Installer\Questions\QuestionFieldsHandler;
+use Yiisoft\Yii\Installer\Templates\Console\ConsoleTemplate;
 use Yiisoft\Yii\Installer\Templates\Template;
 use Yiisoft\Yii\Installer\Templates\TemplateType;
 
@@ -55,6 +58,12 @@ final class Installer
                 storage: new ComposerJsonStorage(new JsonFile($this->composerFilePath)),
                 rootPackage: $this->composer->getPackage(),
             ),
+            resourceManager: new ResourceManager(
+                aliases: [
+                    '@steps' => __DIR__ . '/Steps/',
+                    '@templates' => __DIR__ . '/Templates/',
+                ],
+            ),
         );
 
         $questionHandler = (new QuestionFieldsHandler($this->io));
@@ -68,17 +77,18 @@ final class Installer
         }
 
         foreach ($context->template->handlers as $handler) {
-            $handler->handle($context);
+            $handler->install($context);
         }
 
         foreach ($context->template->questions as $question) {
             foreach ($question->handlers as $handler) {
-                $handler->handle($context);
+                $handler->install($context);
             }
         }
 
         $context->envManager->save();
         $context->composerManager->save();
+        $context->resourceManager->save();
     }
 
     private function getTemplate(): Template

@@ -27,7 +27,7 @@
         "cycle/entity-behavior": "^1.0",
         "cycle/orm": "^2.0"
     },
-    "require-dev": [],
+    "require-dev": {},
     "autoload": {
         "psr-4": {
             "App\\": "src",
