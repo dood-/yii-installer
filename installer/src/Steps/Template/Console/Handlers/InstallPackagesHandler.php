@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Installer\Templates\Console\Handlers;
+namespace Yiisoft\Yii\Installer\Steps\Template\Console\Handlers;
 
 use Yiisoft\Yii\Installer\Internal\InstallerContext;
 use Yiisoft\Yii\Installer\Steps\Console\Packages\RunnerConsolePackage;

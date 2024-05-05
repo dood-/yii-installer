@@ -10,6 +10,9 @@ use function array_map;
 use function implode;
 use function uasort;
 
+/**
+ * @psalm-import-type ValueType from EnvGroup as EnvGroupValueType
+ */
 final class EnvManager
 {
     /** @var EnvGroup[] */
@@ -32,7 +35,7 @@ final class EnvManager
     }
 
     /**
-     * @param array<non-empty-string, mixed> $values
+     * @psalm-param array<non-empty-string, EnvGroupValueType> $values
      * @param ?non-empty-string $comment
      */
     public function addGroup(array $values, ?string $comment = null, int $priority = 0): self
@@ -40,7 +43,7 @@ final class EnvManager
         foreach ($values as $key => $value) {
             foreach ($this->groups as $group) {
                 if ($group->hasKey($key)) {
-                    $group->addValue($key, $values);
+                    $group->addValue($key, $value);
                     unset($values[$key]);
                 }
             }
@@ -55,9 +58,11 @@ final class EnvManager
 
     /**
      * @param non-empty-string $key
+     * @psalm-param EnvGroupValueType $value
      */
     public function addValue(string $key, mixed $value): self
     {
+        /** @var non-empty-string $key */
         $key = mb_strtoupper($key);
 
         foreach ($this->groups as $group) {
@@ -88,6 +93,9 @@ final class EnvManager
         return $content;
     }
 
+    /**
+     * @param non-empty-string $key
+     */
     private function keyExists(string $key): bool
     {
         foreach ($this->groups as $group) {

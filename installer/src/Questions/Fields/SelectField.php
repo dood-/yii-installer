@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Yiisoft\Yii\Installer\Questions\Fields;
 
-use BackedEnum;
 use RuntimeException;
 use UnitEnum;
 
@@ -13,7 +12,7 @@ class SelectField extends Field implements OptionsProvider
     /**
      * @param string|non-empty-string $name
      * @param string|non-empty-string $question
-     * @param SelectOption[]|class-string<UnitEnum> $options
+     * @param SelectOption[]|class-string $options
      * @param string|null $help
      * @param bool $required
      * @param string|bool|null $default
@@ -36,7 +35,7 @@ class SelectField extends Field implements OptionsProvider
     }
 
     /**
-     * @return array|SelectOption[]
+     * @return SelectOption[]
      */
     public function getOptions(): array
     {
@@ -54,13 +53,10 @@ class SelectField extends Field implements OptionsProvider
         }
 
         if (!$this->required) {
-            return [
-                new SelectOption(
-                    title: 'Skip',
-                    value: null,
-                ),
-                ...$options,
-            ];
+            $options[] = new SelectOption(
+                title: 'Skip',
+                value: null,
+            );
         }
 
         return $options;

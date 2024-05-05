@@ -28,8 +28,12 @@ final class ConsoleIO
         return $this->askText($field);
     }
 
-    public function askOption(Field|OptionsProvider $field): mixed
+    public function askOption(Field $field): mixed
     {
+        if (!$field instanceof OptionsProvider) {
+            throw new \InvalidArgumentException('Options provider must be instance of OptionsProvider');
+        }
+
         $options = $field->getOptions();
         $choices = array_map(static fn(SelectOption $option) => $option->title, $options);
 

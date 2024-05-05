@@ -14,10 +14,14 @@ use function is_bool;
 use function is_null;
 use function trim;
 
+/**
+ * @psalm-type ValueType = Stringable|string|bool|array<array-key, null|scalar|Stringable>|null
+ * @template-implements IteratorAggregate<non-empty-string, ValueType>
+ */
 final class EnvGroup implements Stringable, IteratorAggregate
 {
     /**
-     * @param array<non-empty-string, mixed> $values
+     * @param array<non-empty-string, ValueType> $values
      * @param ?non-empty-string $comment
      */
     public function __construct(
@@ -29,6 +33,7 @@ final class EnvGroup implements Stringable, IteratorAggregate
 
     /**
      * @param non-empty-string $key
+     * @param ValueType $value
      */
     public function addValue(string $key, mixed $value): void
     {
@@ -67,6 +72,9 @@ final class EnvGroup implements Stringable, IteratorAggregate
         return PHP_EOL . implode(PHP_EOL, $rows);
     }
 
+    /**
+     * @psalm-param ValueType $value
+     */
     private function convertValue(mixed $value): string
     {
         return match (true) {
