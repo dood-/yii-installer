@@ -1,6 +1,6 @@
 <?php
 
-namespace Yiisoft\Yii\Installer\Questions\Fields;
+namespace Yiisoft\Yii\Installer\Internal\Questions\Fields;
 
 interface OptionsProvider
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Installer\Managers\Composer;
+namespace Yiisoft\Yii\Installer\Internal\Managers\Composer;
 
 use Composer\Package\Link;
 use Composer\Package\RootPackageInterface;

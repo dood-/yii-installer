@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Installer\Managers\Env;
+namespace Yiisoft\Yii\Installer\Internal\Managers\Env;
 
 use Traversable;
 

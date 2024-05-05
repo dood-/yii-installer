@@ -2,32 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Installer\Questions;
+namespace Yiisoft\Yii\Installer\Internal\Questions;
 
-use Yiisoft\Yii\Installer\Console\ConsoleIO;
+use Yiisoft\Yii\Installer\Internal\Console\ConsoleIO;
 use Yiisoft\Yii\Installer\Internal\InstallerContext;
 
 final class QuestionFieldsHandler
 {
-    private array $results = [];
-
     public function __construct(
         private readonly ConsoleIO $io,
         private readonly InstallerContext $context,
     ) {
     }
 
-    public function handle(Question $question): array
+    public function handle(Question $question): void
     {
         $this->handleQuestion($question);
-
-        return $this->results;
     }
-
-//    public function getResults(): array
-//    {
-//        return $this->results;
-//    }
 
     private function handleQuestion(Question $question): void
     {

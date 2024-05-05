@@ -1,6 +1,6 @@
 <?php
 
-namespace Yiisoft\Yii\Installer\Managers\Composer;
+namespace Yiisoft\Yii\Installer\Internal\Managers\Composer;
 
 enum ComposerPackage: string
 {

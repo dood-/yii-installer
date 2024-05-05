@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Installer\Questions;
+namespace Yiisoft\Yii\Installer\Internal\Questions;
 
 use InvalidArgumentException;
 use IteratorAggregate;
@@ -54,7 +54,7 @@ final class QuestionResultCollection implements IteratorAggregate
     /**
      * @psalm-template T of QuestionsResult
      * @psalm-param class-string<T> $questionResultClass
-     * @psalm-return T|null
+     * @psalm-return QuestionsResult|null
      */
     public function findByResultClass(string $questionResultClass)
     {

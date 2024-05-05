@@ -1,6 +1,6 @@
 <?php
 
-namespace Yiisoft\Yii\Installer\Questions;
+namespace Yiisoft\Yii\Installer\Internal\Questions;
 
 interface HasTypedResult
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Installer\Questions\Fields;
+namespace Yiisoft\Yii\Installer\Internal\Questions\Fields;
 
 use RuntimeException;
 use UnitEnum;

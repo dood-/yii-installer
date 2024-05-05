@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Yiisoft\Yii\Installer\Internal;
 
-use Yiisoft\Yii\Installer\Managers\Composer\ComposerManager;
-use Yiisoft\Yii\Installer\Managers\Env\EnvManager;
-use Yiisoft\Yii\Installer\Managers\Resource\ResourceManager;
-use Yiisoft\Yii\Installer\Questions\QuestionResultCollection;
+use Yiisoft\Yii\Installer\Internal\Managers\Composer\ComposerManager;
+use Yiisoft\Yii\Installer\Internal\Managers\Env\EnvManager;
+use Yiisoft\Yii\Installer\Internal\Managers\Resource\ResourceManager;
+use Yiisoft\Yii\Installer\Internal\Questions\QuestionResultCollection;
 
 final class InstallerContext
 {

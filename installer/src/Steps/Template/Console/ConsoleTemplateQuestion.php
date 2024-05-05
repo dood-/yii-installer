@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Yiisoft\Yii\Installer\Steps\Template\Console;
 
-use Yiisoft\Yii\Installer\Questions\Question;
+use Yiisoft\Yii\Installer\Internal\Questions\Question;
 use Yiisoft\Yii\Installer\Steps\Database\DatabaseQuestion;
 use Yiisoft\Yii\Installer\Steps\Template\Console\Handlers\InstallPackagesHandler;
 

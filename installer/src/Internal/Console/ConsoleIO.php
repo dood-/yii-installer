@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Installer\Console;
+namespace Yiisoft\Yii\Installer\Internal\Console;
 
 use Composer\IO\IOInterface;
-use Yiisoft\Yii\Installer\Questions\Fields\Field;
-use Yiisoft\Yii\Installer\Questions\Fields\OptionsProvider;
-use Yiisoft\Yii\Installer\Questions\Fields\SelectOption;
+use Yiisoft\Yii\Installer\Internal\Questions\Fields\Field;
+use Yiisoft\Yii\Installer\Internal\Questions\Fields\OptionsProvider;
+use Yiisoft\Yii\Installer\Internal\Questions\Fields\SelectOption;
 
 use function in_array;
 use function strtolower;

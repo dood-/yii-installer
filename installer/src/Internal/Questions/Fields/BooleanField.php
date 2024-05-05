@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Installer\Questions\Fields;
+namespace Yiisoft\Yii\Installer\Internal\Questions\Fields;
 
 final class BooleanField extends Field implements OptionsProvider
 {

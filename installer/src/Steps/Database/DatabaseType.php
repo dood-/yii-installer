@@ -2,7 +2,7 @@
 
 namespace Yiisoft\Yii\Installer\Steps\Database;
 
-use Yiisoft\Yii\Installer\Questions\Fields\OptionLabelProvider;
+use Yiisoft\Yii\Installer\Internal\Questions\Fields\OptionLabelProvider;
 
 enum DatabaseType implements OptionLabelProvider
 {

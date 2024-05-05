@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Installer\Managers\Env;
+namespace Yiisoft\Yii\Installer\Internal\Managers\Env;
 
 use IteratorAggregate;
 use Stringable;
@@ -33,7 +33,7 @@ final class EnvGroup implements Stringable, IteratorAggregate
 
     /**
      * @param non-empty-string $key
-     * @param ValueType $value
+     * @param Stringable $value
      */
     public function addValue(string $key, mixed $value): void
     {
@@ -73,7 +73,7 @@ final class EnvGroup implements Stringable, IteratorAggregate
     }
 
     /**
-     * @psalm-param ValueType $value
+     * @psalm-param Stringable $value
      */
     private function convertValue(mixed $value): string
     {

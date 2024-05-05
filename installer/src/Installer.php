@@ -7,14 +7,14 @@ namespace Yiisoft\Yii\Installer;
 use Composer\Composer;
 use Composer\Json\JsonFile;
 use Composer\Script\Event;
-use Yiisoft\Yii\Installer\Console\ConsoleIO;
+use Yiisoft\Yii\Installer\Internal\Console\ConsoleIO;
 use Yiisoft\Yii\Installer\Internal\InstallerContext;
-use Yiisoft\Yii\Installer\Managers\Composer\ComposerJsonStorage;
-use Yiisoft\Yii\Installer\Managers\Composer\ComposerManager;
-use Yiisoft\Yii\Installer\Managers\Env\EnvManager;
-use Yiisoft\Yii\Installer\Managers\Resource\ResourceManager;
-use Yiisoft\Yii\Installer\Questions\QuestionFieldsHandler;
-use Yiisoft\Yii\Installer\Questions\QuestionResultCollection;
+use Yiisoft\Yii\Installer\Internal\Managers\Composer\ComposerJsonStorage;
+use Yiisoft\Yii\Installer\Internal\Managers\Composer\ComposerManager;
+use Yiisoft\Yii\Installer\Internal\Managers\Env\EnvManager;
+use Yiisoft\Yii\Installer\Internal\Managers\Resource\ResourceManager;
+use Yiisoft\Yii\Installer\Internal\Questions\QuestionFieldsHandler;
+use Yiisoft\Yii\Installer\Internal\Questions\QuestionResultCollection;
 use Yiisoft\Yii\Installer\Steps\Template\TemplateQuestion;
 
 use function dirname;
@@ -57,7 +57,6 @@ final class Installer
             resourceManager: new ResourceManager(
                 aliases: [
                     '@steps' => __DIR__ . '/Steps/',
-                    '@templates' => __DIR__ . '/Templates/',
                 ],
             ),
             questionResultCollection: new QuestionResultCollection()
@@ -73,8 +72,8 @@ final class Installer
             }
         }
 
-        $context->envManager->save();
         $context->composerManager->save();
+        $context->envManager->save();
         $context->resourceManager->save();
     }
 }

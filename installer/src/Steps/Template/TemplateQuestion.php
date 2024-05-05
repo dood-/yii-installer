@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Yiisoft\Yii\Installer\Steps\Template;
 
-use Yiisoft\Yii\Installer\Questions\Fields\SelectField;
-use Yiisoft\Yii\Installer\Questions\Question;
+use Yiisoft\Yii\Installer\Internal\Questions\Fields\SelectField;
+use Yiisoft\Yii\Installer\Internal\Questions\Question;
 use Yiisoft\Yii\Installer\Steps\Template\Console\ConsoleTemplateQuestion;
 
 final class TemplateQuestion extends Question

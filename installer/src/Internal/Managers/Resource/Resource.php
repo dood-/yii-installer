@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Installer\Managers\Resource;
+namespace Yiisoft\Yii\Installer\Internal\Managers\Resource;
 
 final class Resource
 {

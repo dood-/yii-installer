@@ -1,9 +1,9 @@
 <?php
 
-namespace Yiisoft\Yii\Installer\Questions;
+namespace Yiisoft\Yii\Installer\Internal\Questions;
 
 use Generator;
-use Yiisoft\Yii\Installer\Questions\Fields\Field;
+use Yiisoft\Yii\Installer\Internal\Questions\Fields\Field;
 use Yiisoft\Yii\Installer\Steps\InstallationHandler;
 
 abstract class Question
@@ -19,7 +19,7 @@ abstract class Question
     }
 
     /**
-     * @return Generator<mixed, mixed, Field|Question, void>
+     * @return Generator<mixed, mixed, \Yiisoft\Yii\Installer\Internal\Questions\Fields\Field|Question, void>
      */
     abstract public function fields(): \Generator;
 }

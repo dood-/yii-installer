@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Yiisoft\Yii\Installer\Steps\Database;
 
-use Yiisoft\Yii\Installer\Questions\Fields\BooleanField;
-use Yiisoft\Yii\Installer\Questions\Fields\TextField;
-use Yiisoft\Yii\Installer\Questions\Question;
+use Yiisoft\Yii\Installer\Internal\Questions\Fields\BooleanField;
+use Yiisoft\Yii\Installer\Internal\Questions\Fields\TextField;
+use Yiisoft\Yii\Installer\Internal\Questions\Question;
 use Yiisoft\Yii\Installer\Steps\Database\Handlers\CredentialsHandler;
 
 final class DbCredentialsQuestion extends Question

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Yiisoft\Yii\Installer\Steps;
 
 use Yiisoft\Yii\Installer\Internal\InstallerContext;
-use Yiisoft\Yii\Installer\Questions\QuestionsResult;
 
 abstract class InstallationHandler
 {
