@@ -8,7 +8,7 @@ use Composer\Json\JsonFile;
 use Exception;
 use Seld\JsonLint\ParsingException;
 
-final class ComposerJsonStorage
+final class ComposerJsonStorage implements ComposerStorage
 {
     public function __construct(
         private readonly JsonFile $file,

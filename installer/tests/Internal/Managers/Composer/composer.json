@@ -1,7 +1,7 @@
 {
     "name": "yiisoft/installer",
     "type": "project",
-    "description": "Yii 3 application template",
+    "description": "Yii installer",
     "keywords": [
         "yii3",
         "app"
@@ -19,10 +19,7 @@
         "test-watch": "phpunit-watcher watch"
     },
     "require": {
-        "php": "^8.1",
-        "yiisoft/yii-cycle": "dev-master",
-        "cycle/entity-behavior": "^1.0",
-        "cycle/orm": "^2.0"
+        "php": "^8.1"
     },
     "require-dev": {},
     "autoload": {

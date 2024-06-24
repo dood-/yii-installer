@@ -19,7 +19,7 @@ final class ComposerManager
     private array $devRequires;
 
     public function __construct(
-        private readonly ComposerJsonStorage $storage,
+        private readonly ComposerStorage $storage,
         private readonly RootPackageInterface $rootPackage,
     ) {
         $this->fileContent = $storage->read();
