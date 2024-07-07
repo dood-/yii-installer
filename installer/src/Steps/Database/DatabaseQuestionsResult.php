@@ -9,7 +9,7 @@ use Yiisoft\Yii\Installer\Internal\Questions\QuestionsResult;
 final class DatabaseQuestionsResult extends QuestionsResult
 {
     public function __construct(
-        public readonly DatabaseType $type,
+        public readonly ?DatabaseType $type,
     ) {
     }
 }

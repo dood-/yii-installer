@@ -40,11 +40,9 @@ final class QuestionFieldsHandler
             }
         }
 
-        if ($answers !== []) {
-            $this->context->questionResultCollection->add(
-                questionType: $question::class,
-                result: $question->resultClass::fromArray($answers),
-            );
-        }
+        $this->context->questionResultCollection->add(
+            questionType: $question::class,
+            result: $question->resultClass::fromArray($answers),
+        );
     }
 }

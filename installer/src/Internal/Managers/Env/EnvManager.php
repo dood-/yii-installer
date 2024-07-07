@@ -27,7 +27,7 @@ final class EnvManager
 
     public function __toString(): string
     {
-        uasort($this->groups, static fn(EnvGroup $a, EnvGroup $b) => $a->priority <=> $b->priority);
+        uasort($this->groups, static fn(EnvGroup $a, EnvGroup $b) => $b->priority <=> $a->priority);
 
         $groups = array_map('strval', $this->groups);
 

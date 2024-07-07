@@ -16,10 +16,12 @@ final class InstallPackagesHandler extends InstallationHandler
     {
         $result = $context->questionResultCollection->findByResultClass(DatabaseQuestionsResult::class);
 
-        match ($result->type) {
-            DatabaseType::Cycle => $this->installCycle($context),
-            DatabaseType::Doctrine => $this->installDoctrine($context),
-        };
+        if ($result?->type !== null) {
+            match ($result->type) {
+                DatabaseType::Cycle => $this->installCycle($context),
+                DatabaseType::Db => $this->installDb($context),
+            };
+        }
     }
 
     private function installCycle(InstallerContext $context): void
@@ -27,7 +29,7 @@ final class InstallPackagesHandler extends InstallationHandler
         $context->composerManager->addPackage(new CyclePackage());
     }
 
-    private function installDoctrine(InstallerContext $context): void
+    private function installDb(InstallerContext $context): void
     {
         $context->composerManager->addPackage(new CyclePackage());
     }

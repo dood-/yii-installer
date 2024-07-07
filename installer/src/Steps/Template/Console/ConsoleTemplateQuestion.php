@@ -6,7 +6,9 @@ namespace Yiisoft\Yii\Installer\Steps\Template\Console;
 
 use Yiisoft\Yii\Installer\Internal\Questions\Question;
 use Yiisoft\Yii\Installer\Steps\Database\DatabaseQuestion;
+use Yiisoft\Yii\Installer\Steps\Template\Console\Handlers\EnvHandler;
 use Yiisoft\Yii\Installer\Steps\Template\Console\Handlers\InstallPackagesHandler;
+use Yiisoft\Yii\Installer\Steps\Template\Console\Handlers\ResourcesHandler;
 
 final class ConsoleTemplateQuestion extends Question
 {
@@ -14,6 +16,8 @@ final class ConsoleTemplateQuestion extends Question
         string $resultClass = ConsoleTemplateResult::class,
         array $handlers = [
             new InstallPackagesHandler(),
+            new EnvHandler(),
+            new ResourcesHandler(),
         ],
     ) {
         parent::__construct($resultClass, $handlers);

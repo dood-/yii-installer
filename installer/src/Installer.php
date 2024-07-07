@@ -67,7 +67,8 @@ final class Installer
         $questionHandler->handle(new TemplateQuestion());
 
         foreach ($context->questionResultCollection as $questionClass => $result) {
-            foreach ((new $questionClass)->handlers as $handler) {
+            $question = new $questionClass;
+            foreach ($question->handlers as $handler) {
                 $handler->install($context);
             }
         }
